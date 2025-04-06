@@ -1,6 +1,6 @@
 # 🎓 Smart Classroom Management Software (SCMS)
 
-![Smart Classroom Management System](Dashboard.png)
+![Smart Classroom Management System](dashboard.png)
 
 [![Watch on YouTube](https://img.shields.io/badge/Watch%20Demo%20Video-red?style=for-the-badge&logo=youtube)](https://youtu.be/Q31oA_-Uil0?feature=shared)
 
