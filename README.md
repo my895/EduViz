@@ -2,7 +2,6 @@
 
 ### ⚡ Real-Time Attendance · Smart Alerts · Intelligent Resource Management
 
-[![GitHub](https://img.shields.io/badge/GitHub-xprilion%2FSmartClassroom-181717?style=flat&logo=github)](https://github.com/xprilion/SmartClassroom)
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-Web_App-000000?style=flat&logo=flask)](https://flask.palletsprojects.com/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?style=flat&logo=postgresql)](https://www.postgresql.org/)
