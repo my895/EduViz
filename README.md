@@ -2,7 +2,7 @@
 
 ![Smart Classroom Management System](thumbnail.png)
 
-[![Watch on YouTube](https://img.shields.io/badge/Watch%20Demo%20Video-red?style=for-the-badge&logo=youtube)] (https://youtu.be/Q31oA_-Uil0?feature=shared)
+[![Watch on YouTube](https://img.shields.io/badge/Watch%20Demo%20Video-red?style=for-the-badge&logo=youtube)](https://youtu.be/Q31oA_-Uil0?feature=shared)
 
 ## 📌 Overview
 
@@ -75,14 +75,6 @@ SCMS is built using a modular **microservice architecture** which enables:
 | ML & AI                | OpenCV, TensorFlow/PyTorch |
 | Architecture           | Microservices via Flask Blueprints / APIs |
 | Deployment             | Docker, Heroku/GCP/AWS |
-
----
-
-## 📽️ Demo Video
-
-Click the badge below to watch a full walkthrough of the system:
-
-[![Watch on YouTube](https://img.shields.io/badge/Watch%20Demo%20Video-red?style=for-the-badge&logo=youtube)](https://youtu.be/Q31oA_-Uil0?feature=shared)
 
 ---
 
