@@ -1,7 +1,3 @@
-Absolutely! Here's a cleaner, more **tech-focused**, professional `README.md` tailored for developers and recruiters. I’ve kept only what’s necessary and made the tone sleek and to-the-point.
-
----
-
 ## 🧠 **EduVision** — Smart Classroom Automation Suite
 
 ### ⚡ Real-Time Attendance · Smart Alerts · Intelligent Resource Management
