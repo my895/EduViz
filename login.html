@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Login page for Rashtriya Raksha University">
+    <meta name="author" content="Rashtriya Raksha University">
+
+    <title>Rashtriya Raksha University - Login</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900' rel='stylesheet'>
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to right, #f2f4f6, #010303);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .login-container, .signup-container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .login-container:hover, .signup-container:hover {
+            transform: scale(1.03);
+        }
+
+        .login-container img, .signup-container img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .login-container h2, .signup-container h2 {
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .login-container input[type="email"],
+        .login-container input[type="password"],
+        .signup-container input[type="email"],
+        .signup-container input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .login-container button,
+        .signup-container button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #010203;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .login-container button:hover,
+        .signup-container button:hover {
+            background: #010202;
+        }
+
+        .login-container .signup-link,
+        .signup-container .signup-link {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #05070a;
+        }
+
+        .login-container .signup-link:hover,
+        .signup-container .signup-link:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+
+    <script type="module" src="firebaseauth.js"></script>
+</head>
+
+<body>
+    <div class="login-container" id="login-container">
+        <img src="https://rru.ac.in/wp-content/uploads/2021/07/RRU-Logo12.png" alt="RRU Logo">
+        <h2>Login</h2>
+        <input type="email" id="login-email" placeholder="Email">
+        <input type="password" id="login-password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <p class="signup-link" onclick="showSignup()">Don't have an account? Sign up</p>
+    </div>
+
+    <div class="signup-container hidden" id="signup-container">
+        <img src="https://rru.ac.in/wp-content/uploads/2021/07/RRU-Logo12.png" alt="RRU Logo">
+        <h2>Sign Up</h2>
+        <input type="email" id="signup-email" placeholder="Email">
+        <input type="password" id="signup-password" placeholder="Password">
+        <button onclick="signup()">Sign Up</button>
+        <p class="signup-link" onclick="showLogin()">Already have an account? Login</p>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Firebase Authentication -->
+    <script>
+        function showSignup() {
+            document.getElementById('login-container').classList.add('hidden');
+            document.getElementById('signup-container').classList.remove('hidden');
+        }
+
+        function showLogin() {
+            document.getElementById('signup-container').classList.add('hidden');
+            document.getElementById('login-container').classList.remove('hidden');
+        }
+
+        function login() {
+            var email = document.getElementById('login-email').value;
+            var password = document.getElementById('login-password').value;
+
+            firebase.auth().signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // Signed in
+                    var user = userCredential.user;
+                    alert('Login Successful');
+                })
+                .catch((error) => {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    alert(errorMessage);
+                });
+        }
+
+        function signup() {
+            var email = document.getElementById('signup-email').value;
+            var password = document.getElementById('signup-password').value;
+
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // Signed up
+                    var user = userCredential.user;
+                    alert('Signup Successful');
+                })
+                .catch((error) => {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    alert(errorMessage);
+                });
+        }
+    </script>
+</body>
+
+</html>
